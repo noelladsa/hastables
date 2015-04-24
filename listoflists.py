@@ -44,17 +44,17 @@ class ListofLists(object):
         print self.nativehash
 
 
+if __name__ == "__main__":
 
+    hashTable = ListofLists()
+    hashTable.addKeyValuePair("roommate","trash")
+    hashTable.addKeyValuePair("recursecenter","largerooms")
+    hashTable.printHash()
 
-hashTable = ListofLists()
-hashTable.addKeyValuePair("roommate","trash")
-hashTable.addKeyValuePair("recursecenter","largerooms")
-hashTable.printHash()
-
-hashTable.addKeyValuePair("recursecenter","evenlargerooms")
-value = hashTable.getValue('roommate')
-print "The value is",value
-hashTable.removeKey('roommate')
-hashTable.printHash()
+    hashTable.addKeyValuePair("recursecenter","evenlargerooms")
+    value = hashTable.getValue('roommate')
+    print "The value is",value
+    hashTable.removeKey('roommate')
+    hashTable.printHash()
 
 

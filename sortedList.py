@@ -12,7 +12,7 @@ class sortedList(object):
         else:
             # print self.nativehash
             index, element = self.searchElement(key, self.nativehash)
-            print "Index,element",index,element
+            # print "Index,element",index,element
             if element:
                 self.nativehash[index][1] = value
             else:
@@ -33,8 +33,7 @@ class sortedList(object):
             else:
                 # print "Midpoint",midpoint,"Slice",array[:midpoint-1]
                 return self.searchElement(key, array[:midpoint])
-        else:
-            print "uh oh, not in the array!"
+
 
         return None,None
 
@@ -43,8 +42,8 @@ class sortedList(object):
             raise Exception("Key was not set")
 
         index,element = self.searchElement(key, self.nativehash)
-        return element[1]
-
+        if element:
+            return element[1]
 
 
     def removeKey(self,key):
@@ -52,29 +51,31 @@ class sortedList(object):
             raise Exception("Key was not set")
 
         index,item = self.searchElement(key, self.nativehash)
-        self.nativehash.remove(item)
+        if item:
+            self.nativehash.remove(item)
 
     def printHash(self):
         print self.nativehash
 
 
-hashTable = sortedList()
-print "Adding roomate,trash"
-hashTable.addKeyValuePair("roommate","trash")
-hashTable.printHash()
+if __name__ == "__main__":
+    hashTable = sortedList()
+    print "Adding roomate,trash"
+    hashTable.addKeyValuePair("roommate","trash")
+    hashTable.printHash()
 
-print "Adding recursecenter,largerooms"
-hashTable.addKeyValuePair("recursecenter","largerooms")
-hashTable.printHash()
-print "Adding boo,radley"
-hashTable.addKeyValuePair("boo","radley")
-hashTable.printHash()
-print "Adding boo,radley2"
-hashTable.addKeyValuePair("boo","radley2")
-hashTable.printHash()
-value = hashTable.getValue('roommate')
-print "The value is",value
-hashTable.removeKey('roommate')
-hashTable.printHash()
+    print "Adding recursecenter,largerooms"
+    hashTable.addKeyValuePair("recursecenter","largerooms")
+    hashTable.printHash()
+    print "Adding boo,radley"
+    hashTable.addKeyValuePair("boo","radley")
+    hashTable.printHash()
+    print "Adding boo,radley2"
+    hashTable.addKeyValuePair("boo","radley2")
+    hashTable.printHash()
+    value = hashTable.getValue('roommate')
+    print "The value is",value
+    hashTable.removeKey('roommate')
+    hashTable.printHash()
 
 

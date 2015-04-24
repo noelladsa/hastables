@@ -21,13 +21,14 @@ class AssocArray(object):
     def printHash(self):
         print self.nativehash
 
-hashTable = AssocArray()
-hashTable.addKeyValuePair("roommate","trash")
-hashTable.addKeyValuePair("recursecenter","largerooms")
-hashTable.printHash()
-value = hashTable.getValue('roommate')
-print "The value is",value
-hashTable.removeKey('roommate')
-hashTable.printHash()
+if __name__ == "__main__":
+    hashTable = AssocArray()
+    hashTable.addKeyValuePair("roommate","trash")
+    hashTable.addKeyValuePair("recursecenter","largerooms")
+    hashTable.printHash()
+    value = hashTable.getValue('roommate')
+    print "The value is",value
+    hashTable.removeKey('roommate')
+    hashTable.printHash()
 
 
